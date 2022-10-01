@@ -33,7 +33,7 @@ public class Ejercicio09repetido {
 						File f = new File("C:\\Users\\Bakero\\Desktop\\Pruebas\\Bakero\\ProfesFPSierraGuara.dat");
 						RandomAccessFile file = new RandomAccessFile(f,"rw");
 						if(posicion>f.length()) {
-							System.out.println("No existe ningun profesor con ese id.");
+							System.out.println("No existe ningun profesor con ese id!");
 							System.exit(-1);
 						}
 					//PARTE TRES SI EL IDENTIFICADOR ES O EL PROFESOR YA HA SIDO BORRADO
