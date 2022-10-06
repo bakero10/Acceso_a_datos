@@ -15,50 +15,53 @@ public class Ejercicio09 {
 	 * 				- El identificador del profesor este dentro de los limites del fichero.
 	 * 				- El identificador del profesor debe existir.Si ha sido borrado previamente se advertira de la situacion.
 	 * 				- Antes de finalizar el codigo visualizar de manera secuencial todos los registros del fichero para comprobar la operacion.
+	 * * 			==================================
+	 * Id 			  (entero – 4 bytes)*
+	 * Nombre (20 caracteres – 40 bytes)*
+	 * Departamento    (entero– 4 bytes)*
+	 * Antigüedad 		(real – 8 bytes)*
+	 *			===================================
+	 *					 Total(56 bytes)*
+	 * 	
 	 */
 	public static void main(String[] args){
-		Scanner s = new Scanner (System.in);
+	Scanner s = new Scanner(System.in);
+			
+			System.out.println("Introduce el id del profesor: ");
+			int numProf = s.nextInt();
+			int posicion = (numProf - 1)*56;
 			try {
-				File f = new File ("C:\\Users\\Bakero\\Desktop\\Pruebas\\Bakero\\ProfesFPSierraGuara.dat");
-				RandomAccessFile file = new RandomAccessFile(f, "rw");
-					int id = s.nextInt();
-					int posicion = (id - 1)*56;
-					
-					// PARTE 1 EL IDENTIFICADOR ESTA DENTRO DE LOS LIMITES DEL FICHERO
-					if((posicion > f.length() -56) || (id<1)) {
-						System.err.println("No existe ningun profesor con ese ID");
-						System.exit(-1);
+				File f = new File("Ficheros/ProfesFPSierraGuara.dat");
+				RandomAccessFile file = new RandomAccessFile(f,"rw");
+				if(posicion >f.length() || numProf == 0) {
+					System.out.println("Ese profesor no existe.");
+					System.exit(-1); 
+				}
+				file.seek(posicion);
+				if(file.readInt() == 0) {
+					System.out.println("Este profesor ya ha sido borrado");
+					System.exit(-1);
+				}
+				file.seek(posicion);
+				file.writeInt(0);
+				
+				int departamento;
+				double antiguedad;
+				char [] nombre=new char[20];
+				file.seek(0);
+				System.out.println("Id\tNombre\tDepartamento\tAntiguedad");
+				for (int i = 0; i < file.length(); i++) {
+					int id = file.readInt();
+					for (int j = 0; j < nombre.length; j++) {
+						nombre[j]=file.readChar();
 					}
-					
-					//PARTE 2 SI EL IDENTIFIADOR ES 0 ADVERTIMOS DE LA SITUACION
-					file.seek(posicion); // le decimos que ponga el puntero en la posicion
-					if(file.readInt() == 0) { // si el puntero esta en la posicion 0....
-						System.err.println("El profesor con ese ID ya a sido borrado.");
-					}
-					else {
-						file.seek(file.getFilePointer()-1);//retrocedemos una posicion para situarnos en el id de nuevo ya que al leerlo hemos avanzado el puntero
-						file.writeInt(0); //Ponemos el identificador a 0 ,con esto le decimos que esta borrado
-					}
-					// PARTE 3 VISUALIZAMOS TODOS LOS FICHEROS
-					int dept;
-					double antiguedad;
-					char profes[] = new char[20];
-					file.seek(0);
-					System.out.println("ID\tNombre\t\tDepartamento\tAntiguedad");
-					for(int i=0; i<file.length()/56; i++) {
-						id=file.readInt();
-						for(int j=0; j<profes.length; j++) {//recojo los 20 caracteres en un array
-							profes[j]=file.readChar();
-						}
-						dept=file.readInt();
-						antiguedad=file.readDouble();
-						String Profe = new String (profes);//Paso el array a String para imprimirlo
-						System.out.println(id+"\t"+Profe+"\t"+dept+"\t"+antiguedad);
-					}
-			} catch (FileNotFoundException e) {
-				System.err.println("no se encuentra el archivo");
-			} catch (IOException e) {
-				System.err.println("ERROR IOException");
+					departamento = file.readInt();
+					antiguedad = file.readDouble();
+					String nombres =  new String(nombre);
+					System.out.println(id+"\t"+nombres+"\t"+departamento+"\t"+antiguedad);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
 	}	
 

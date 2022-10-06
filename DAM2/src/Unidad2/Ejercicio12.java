@@ -12,9 +12,17 @@ import java.text.SimpleDateFormat;
 public class Ejercicio12 {
 
 	public static void main(String[] args) {
-
+		/**
+		 * Realiza una clase UD2_12 con un método principal que reciba dos argumentos,
+		 * un directorio y una extensión de fichero, e indique los datos (nombre, tamaño
+		 * y fecha de creación) de los ficheros del directorio que tienen esa extension.
+		 * Pista --> Interfaz FilenameFilter.
+		 * Debera comprobarse al principio del codigo que el directorio enviado como primer argumento existe, 
+		 * en caso contrario se indicará y finalizará su ejecución.
+		 * 
+		 */
 		if (args.length == 0) {
-			System.out.println("No se ha recibido ningun argumento");
+			System.out.println("No se ha recibido ningun argumento!!");
 			System.exit(0);
 		} else {
 			File directorio = new File(args[0]);

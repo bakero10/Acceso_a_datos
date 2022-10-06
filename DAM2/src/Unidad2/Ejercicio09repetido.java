@@ -32,7 +32,7 @@ public class Ejercicio09repetido {
 					try {
 						File f = new File("C:\\Users\\Bakero\\Desktop\\Pruebas\\Bakero\\ProfesFPSierraGuara.dat");
 						RandomAccessFile file = new RandomAccessFile(f,"rw");
-						if(posicion>f.length()) {
+						if(posicion>f.length()-56) {
 							System.out.println("No existe ningun profesor con ese id!");
 							System.exit(-1);
 						}

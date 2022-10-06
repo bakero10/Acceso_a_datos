@@ -19,33 +19,6 @@ public class Ejercicio08 {
 	Antes de finalizar el código se recorrerá el fichero para visualizar su contenido. Prueba varias
 	veces la ejecución de la clase.
 	 */
-	public static class Profesor implements Serializable{
-		private String nombre;
-		private double antiguedad;
-		public Profesor(String nombre, double antiguedad) {
-			super();
-			this.nombre = nombre;
-			this.antiguedad = antiguedad;
-		}
-		public String getNombre() {
-			return nombre;
-		}
-		public void setNombre(String nombre) {
-			this.nombre = nombre;
-		}
-		public double getAntiguedad() {
-			return antiguedad;
-		}
-		public void setAntiguedad(double antiguedad) {
-			this.antiguedad = antiguedad;
-		}
-		@Override
-		public String toString() {
-			return "Profesor Nombre= " + nombre + " || Antiguedad= " + antiguedad;
-		}
-		
-	}
-	
 	public static void main(String[] args) throws ClassNotFoundException {
 		Scanner s = new Scanner(System.in);
 		//PARTE 1 INTRODUCCION DE DATOS ---------------------------------------------------
@@ -70,19 +43,19 @@ public class Ejercicio08 {
 						antiguedades[i] = Double.parseDouble(antiguedad);
 					}
 			//PARTE DOS ESCRIBIMOS LOS DATOS EN EL FICHERO --------------------------------------------------------
-			File f = new File("C:\\Users\\Bakero\\Desktop\\Pruebas\\Bakero\\antiguedad.dat_obj.dat");
+			File f = new File("Ficheros/antiguedad.dat_obj.dat");
 			try {
 				if(f.exists()) {
 					miObjectOutputStream moos = new miObjectOutputStream(new FileOutputStream(f,true));
 						for(int  i=0; i<nume;i++) {
-					moos.writeObject(new Profesor(nombres[i],antiguedades[i]));
+					moos.writeObject(new profesor(nombres[i],antiguedades[i]));
 						}
 						moos.close();
 				}
 				else {
 					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f,true));
 						for(int i=0; i<nume; i++) {
-							oos.writeObject(new Profesor(nombres[i],antiguedades[i]));
+							oos.writeObject(new profesor(nombres[i],antiguedades[i]));
 						}
 						oos.close();
 				}
