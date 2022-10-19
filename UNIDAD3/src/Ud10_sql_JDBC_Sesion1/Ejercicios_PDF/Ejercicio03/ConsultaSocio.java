@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 public class ConsultaSocio extends JFrame {
  
 	Container contenedor;
-	JButton boton1, boton2, boton3, boton4, boton5;
+	JButton boton1, boton2, boton3, boton4, boton5, boton6;
 	JTextField caja1, caja2, caja3, caja4, caja5, caja6;
 	JLabel etiq1, etiq2, etiq3, etiq4, etiq5, etiq6, etiq7, etiq8;
 	static int ultimo = 0;
@@ -35,6 +35,7 @@ public class ConsultaSocio extends JFrame {
 		boton3 = new JButton("Buscar");
 		boton4 = new JButton("Actualizar");
 		boton5 = new JButton("Nuevo");
+		boton6 = new JButton("Borrar");
 		
 		caja1 = new JTextField();
 		caja2 = new JTextField();
@@ -58,6 +59,7 @@ public class ConsultaSocio extends JFrame {
 		contenedor.add(boton3);
 		contenedor.add(boton4);
 		contenedor.add(boton5);
+		contenedor.add(boton6);
 		contenedor.add(caja1);
 		contenedor.add(caja2);
 		contenedor.add(caja3);
@@ -78,6 +80,7 @@ public class ConsultaSocio extends JFrame {
 		boton3.setBounds(345, 95, 95,20);
 		boton4.setBounds(345, 120, 95,20);
 		boton5.setBounds(345, 145, 95,20);
+		boton6.setBounds(345, 170, 95,20);
 		
 		caja1.setBounds(120, 70, 45,20);
 		caja2.setBounds(120, 95, 200,20);
@@ -100,6 +103,8 @@ public class ConsultaSocio extends JFrame {
 		boton2.addActionListener(new OyenteBoton());
 		boton3.addActionListener(new OyenteBoton());
 		boton4.addActionListener(new OyenteBoton());
+		boton5.addActionListener(new OyenteBoton());
+		boton6.addActionListener(new OyenteBoton());
 		
 		//Poner en no visible los alementos que no necesitamos y los botones temporalmente
 		caja1.setEditable(false);
@@ -175,22 +180,30 @@ public class ConsultaSocio extends JFrame {
 					}
 					
 				}
-				if(event.getSource() == boton4) {//Actualizar
-					if(caja2.getText().isEmpty() || caja3.getText().isEmpty() || caja4.getText().isEmpty() || caja5.getText().isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Tienes que introducir todos los campos");
-					}
-					else {
-						
-						abd.actualizarDatos(Integer.parseInt(caja1.getText()), caja2.getText(),Integer.parseInt(caja3.getText()), Integer.parseInt(caja4.getText()), caja5.getText());
-					}
-				}
-				if(event.getSource() == boton5) {//Nuevo
-					
-				}
 				
 			}else {
 				JOptionPane.showMessageDialog(null,"No se han encontrado socios de " + caja6.getText() ,"Mensaje", JOptionPane.INFORMATION_MESSAGE);
 				abd.desconectar();
+			}
+			
+			
+			
+			if(event.getSource() == boton4) {//Actualizar
+				if(caja2.getText().isEmpty() || caja3.getText().isEmpty() || caja4.getText().isEmpty() || caja5.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Tienes que introducir todos los campos");
+				}
+				else {
+					
+					abd.actualizarDatos(Integer.parseInt(caja1.getText()), caja2.getText(),Integer.parseInt(caja3.getText()), Integer.parseInt(caja4.getText()), caja5.getText());
+				}
+			}
+			if(event.getSource() == boton5) {//Nuevo
+				if(caja2.getText().isEmpty() || caja3.getText().isEmpty() || caja4.getText().isEmpty() || caja5.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Tienes que introducir todos los campos");
+				} else {
+					abd.insertarNuevo(caja2.getText(),Integer.parseInt(caja3.getText()), Integer.parseInt(caja4.getText()), caja5.getText(),Integer.parseInt(caja1.getText()+1));
+					System.out.println("Funciona");
+				}
 			}
 			
 			}catch (Exception e) {
@@ -198,6 +211,10 @@ public class ConsultaSocio extends JFrame {
 				e.printStackTrace();
 			}
 			
+			if (event.getSource() == boton6) {//borrar
+				abd.borrarSocio(Integer.parseInt(caja1.getText()));
+				
+			}
 
 
 			

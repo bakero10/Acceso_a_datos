@@ -69,9 +69,48 @@ public void actualizarDatos(int socioID, String nombre, int estatura, int edad, 
 		}
 		
 	}
-	
-	
-	
+
+	public void insertarNuevo(String nombre, int estatura, int edad, String localidad,int socioID) {
+		try {
+			PreparedStatement ps = conecta.prepareStatement("insert into socio values (?, ?, ?, ?, ?)");
+			ps.setInt(1, ultimoIdDisponible());
+			ps.setString(2, nombre);
+			ps.setInt(3, estatura);
+			ps.setInt(4, edad);
+			ps.setString(5, localidad);
+			ps.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Nuevo socio introducido");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	public int ultimoIdDisponible() {
+		ResultSet rs;
+		int num = 0 ;
+		try {	
+			PreparedStatement ps = conecta.prepareStatement("select socioID from socio order by socioId desc limit 1");
+			rs = ps.executeQuery();
+			if(rs.next())
+			num = rs.getInt(1);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return num +1;
+	}
+	public void borrarSocio(int socioID) {
+		
+		try {
+			PreparedStatement ps = conecta.prepareStatement("delete from socio where socioId = ? ");
+			ps.setInt(1, socioID);
+			ps.executeUpdate();
+			JOptionPane.showMessageDialog(null, "Socio borrado");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+
+
 	//Creamos un metodo que primero mire si la localidad que nos da esta vacia, devuelva un ResultSet con todos los socios.
 	//Y si nos manda una localidad que existe, nos devuelva un ResultSet con solo los socios de esa Localidad.
 	//Ademas despues contaremos el numero de socios(filas) del ResultSet en la interfaz
