@@ -85,6 +85,7 @@ public class AccesoBdatos {
 			}
 		}
 		//METODO PARA SACAR LA ULTIMA ID DISPONIBLE ---------------------------------
+		
 		public int ultimoIdDisponible() {
 			ResultSet rs;
 			int num = 0 ;
@@ -110,7 +111,7 @@ public class AccesoBdatos {
 				// TODO: handle exception
 			}
 		}
-
+ 
 	//Creamos un metodo que primero mire si la localidad que nos da esta vacia, devuelva un ResultSet con todos los socios.
 	//Y si nos manda una localidad que existe, nos devuelva un ResultSet con solo los socios de esa Localidad.
 	//Ademas despues contaremos el numero de socios(filas) del ResultSet en la interfaz
