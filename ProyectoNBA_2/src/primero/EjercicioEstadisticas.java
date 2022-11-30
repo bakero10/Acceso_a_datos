@@ -24,6 +24,7 @@ public class EjercicioEstadisticas {
 		// usamos las clases mapeadas por ejemplo en estadistica hay un atributo que se llama jugadores para referenciar a la tabla jugadores
 		String ConsultaConHql = "from Estadisticas e, Jugadores j where e.jugadores.codigo = j.codigo and j.codigo = :id order by e.id.temporada";
 		Query consulta = sesion.createQuery(ConsultaConHql).setParameter("id", idJugador);
+		
 		//List<Object[]> filas = consulta.list(); //de esta manera podriamos hacerlo con una lista directamente, sin iterate
 		
 		Iterator i = consulta.iterate(); //En vez de hacer un .list(), hacemos un iterate directamente, por que sabemos que el resultado
@@ -57,6 +58,25 @@ public class EjercicioEstadisticas {
 			{			
 			System.out.println("El id del jugador introducido no existe");
 			}
-		}
-
-}
+		
+//		//Forma 2
+//				Jugadores jugador;
+//				Set lista;
+//				
+//				jugador = (Jugadores) sesion.load(Jugadores.class, (int) idJugador);
+//				lista = jugador.getEstadisticases();
+//				Iterator iterador = lista.iterator();
+//				
+//				System.out.println("Nombre : "+jugador.getNombre());
+//				System.out.println("Equipo : "+jugador .getEquipos().getNombre());
+//				System.out.println("Temporada	Ptos	Asis	Tap	Reb");
+//				System.out.println("================================================");
+//				while(iterador.hasNext()) {
+//					Estadisticas estaditicas = (Estadisticas) iterador.next();
+//					System.out.printf("%s \t\t %.1f \t%.1f \t%.1f \t%.1f \n", estaditicas.getId().getTemporada(), estaditicas.getPuntosPorPartido(), estaditicas.getAsistenciasPorPartido()
+//									,estaditicas.getTaponesPorPartido(), estaditicas.getRebotesPorPartido());
+//				}
+		
+		
+		}//main
+}//class
