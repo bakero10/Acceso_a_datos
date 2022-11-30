@@ -20,9 +20,9 @@ public class Ejercicio1Estadisticas {
 		codJugador = s.nextInt();
 		
 		//2do hacemos la sentencia
-		String consultaHql = "from Estadisticas e, Jugadores j where e.jugadores.codigo = j.codigo and j.codigo = :id order by e.id.temporada";
-		Query consulta = session.createQuery(consultaHql).setParameter("id", codJugador);
-		
+//		String consultaHql = "from Estadisticas e, Jugadores j where e.jugadores.codigo = j.codigo and j.codigo = :id order by e.id.temporada";
+//		Query consulta = session.createQuery(consultaHql).setParameter("id", codJugador);
+//		
 //		//3ero le ponemos un iterator para poder recorrer la lista
 //		Iterator i = consulta.iterate(); //En vez de hacer un .list(), hacemos un iterate directamente, por que sabemos que el resultado
 //										//va a ser una matriz, (un array, que guarda un array), la posicion 0 hace referencia a Estadisticas y la posicion 1 a Jugadores
@@ -73,11 +73,5 @@ public class Ejercicio1Estadisticas {
 							,estaditicas.getTaponesPorPartido(), estaditicas.getRebotesPorPartido());
 		}
 
-		
-		
-		
-		
-		
-		
 	}//main
 }//class
