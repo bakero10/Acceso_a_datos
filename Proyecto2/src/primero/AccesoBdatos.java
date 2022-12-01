@@ -34,25 +34,12 @@ public class AccesoBdatos {
 	
 	public void conectar() {
 		session = sesion.openSession();
-//		try {
-//		Class.forName(driver);
-//		conecta = DriverManager.getConnection(url, username, password); //Cuando ejecutemos conectar, iniciaremos todos los pasos para conectar
-//		}catch (ClassNotFoundException cnf) {
-//			System.out.println("Clase driver no encontrada");
-//		}catch (SQLException sqle) {
-//			System.out.println("Error SQL en la conexion");
-//		}
+
 	}
 	
 	public void desconectar() {
 		session.close();
-//		try {
-//		if (conecta !=null) { //Si en conecta hay algo, entonces desconecta. Con esto tenemos un metodo que cierre la conexion
-//			conecta.close();
-//		}
-//		}catch (SQLException sqle) {
-//			System.out.println("Error al desconectar");
-//		}
+
 	}
 		//METODO ACTUALIZAR DATOS ----------------------------------------- HIBERNATE************
 		public void actualizarDatos(int socioID, String nombre, int estatura, int edad, String localidad) {
