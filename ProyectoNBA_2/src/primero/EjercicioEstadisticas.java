@@ -33,9 +33,10 @@ public class EjercicioEstadisticas {
 		
 		if(i.hasNext()) {		//Si hay siguiente quiere decir que se ha creado la matriz, con lo que continuamos, sino, salta al else
 			contador++;
-		Object[] array = (Object[]) i.next();
-		Estadisticas es = (Estadisticas) array[0];
-		Jugadores ju = (Jugadores) array[1];
+		Object[] array = (Object[]) i.next();		// Array de objetos con iterator siguiente
+		Estadisticas es = (Estadisticas) array[0];	// el primer array es de estadisticas
+		Jugadores ju = (Jugadores) array[1];		// el segundo array es de jugadores
+		
 		System.out.println("Nombre : "+ju.getNombre());
 		System.out.println("Equipo : "+ju.getEquipos().getNombre()); 
 		System.out.println("Temporada	Ptos	Asis	Tap	Reb");

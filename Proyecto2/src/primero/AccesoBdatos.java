@@ -41,7 +41,7 @@ public class AccesoBdatos {
 		session.close();
 
 	}
-		//METODO ACTUALIZAR DATOS ----------------------------------------- HIBERNATE************
+		//METODO ACTUALIZAR DATOS ----------------------------------------- HIBERNATE ************
 		public void actualizarDatos(int socioID, String nombre, int estatura, int edad, String localidad) {
 			
 			String hqlModif = "update Socio set nombre = :nombre,estatura = :estatura,edad = :edad,localidad = :localidad where socioID = :socioID;"; 
