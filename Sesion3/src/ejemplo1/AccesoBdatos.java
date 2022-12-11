@@ -137,7 +137,6 @@ public class AccesoBdatos {
 	}// de demoJPQL
 //--------------------------------------------------------------------------------------------------------------
 	public void ejercicio1() {
-		 //EJERCICIO1 
 		 //Nombre y fecha de alta de todos los empleados
 		
 		 List<Object[]> lista = em.createQuery("SELECT d.nombre,d.alta FROM EmpleadoEntity d ").getResultList();
@@ -145,9 +144,52 @@ public class AccesoBdatos {
 			System.out.println(object[0]+" - "+object[1]);
 		 }
 	}
-		 //EJERCICIO02
-		 //Igual que el anterior pero para aquellos que carrera forme parte del nombre
+		 //Igual que el anterior pero para aquellos que carrera forme parte del nombre.No distinguir mayusculas de minusculas
+	
 	public void ejercicio2() {
+		List<Object[]> lista = em.createQuery("SELECT e.nombre,e.alta FROM EmpleadoEntity e WHERE e.nombre like '%Carrera%'").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]);
+		}
+	}
+	public void ejercicio03() {
+		//Empleados del Departamento I+D cuyo oficio es el de Empleado
+		
+		List<Object[]> lista = em.createQuery("SELECT e.nombre,e.oficio,e.departamento.nombre FROM EmpleadoEntity e WHERE e.departamento.nombre like '%I+D%' AND e.oficio like '%Empleado%' ").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+ objects[1]+" - "+objects[2]);
+		}
+	}
+	public void ejercicio04() {
+		//Empleados contratados a partir del 2003
+		List<Object[]> lista = em.createQuery("SELECT e.nombre , e.alta FROM EmpleadoEntity e WHERE  e.alta > 2003 ").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+ objects[1]);
+		}
+	}
+	public void ejercicio05() {
+		//Empleados por orden alfabetico de departamento
+		List<Object[]> lista = em.createQuery("SELECT d.nombre , d.empleados.nombre FROM DepartamentoEntity d order by d.nombre asc").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+ objects[1]);
+		}
+	}
+	public void ejercicio06() {
+		//Nombre, nº de empleados, total y maximo salario de los departamentos con empleados
+		List<Object[]> lista = em.createQuery("SELECT d.nombre , COUNT (d.empleados) , SUM (d.empleados.salario) ,MAX (d.empleados.salario) FROM DepartamentoEntity d GROUP BY d.nombre").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+ objects[1]+" - "+objects[2]+" - "+objects[3]);
+		}
+	}
+	public void ejercicio07() {
+		//Idem de la anterior pero para departamentos a partir de 5 empleados
+		List<Object[]> lista = em.createQuery("SELECT d.nombre ,COUNT (d.nombre), SUM (d.empleados.salario), MAX (d.empleados.salario) FROM DepartamentoEntity d GROUP BY d.nombre HAVING COUNT (d.nombre) > 5 ").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+ objects[1]+" - "+objects[2]+" - "+objects[3]);
+		}
+	}
+	public void ejercicio08() {
+		//Cada empleado junto con su jefe
 		List<Object[]> lista = em.createQuery("").getResultList();
 	}
 	
