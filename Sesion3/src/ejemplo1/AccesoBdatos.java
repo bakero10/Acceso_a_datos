@@ -192,7 +192,41 @@ public class AccesoBdatos {
 		//Cada empleado junto con su jefe
 		List<Object[]> lista = em.createQuery("").getResultList();
 	}
-	
+	public void ejercicio09() {
+		//Nombre y total de empleados de los departamentos con algun empleado
+		List<Object[]> lista = em.createQuery("SELECT d.nombre , COUNT (d.empleados.nombre) FROM DepartamentoEntity d GROUP BY d.nombre ").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]);
+		}
+	}
+	public void ejercicio10() {
+		//Nombre y total de empleados de TODOS los departamentos
+		List<Object[]> lista = em.createQuery("SELECT d.nombre, COUNT (d.empleados) FROM DepartamentoEntity d GROUP BY d.nombre").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]);
+		}
+	}
+	public void ejercicio11() {
+		//Ordenando descendentemente por departamento y ascendentemente por salario
+		List<Object[]> lista = em.createQuery("SELECT d.dptoId, d.empleados.nombre , d.empleados.salario FROM DepartamentoEntity d ORDER BY d.dptoId desc , d.empleados.salario asc ").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]+" - "+objects[2]);
+		}
+	}
+	public void ejercicio12() {
+		//Empleados sin jefe
+		List<Object[]> lista = em.createQuery("").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]+" - "+objects[2]);
+		}
+	}
+	public void ejercicio13() {
+		//Departamento al que pertenece el empleado nº1039
+		List<Object[]> lista = em.createQuery("SELECT e.departamento.dptoId, e.oficio FROM EmpleadoEntity e WHERE e.empnoId = 1039").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]);
+		}
+	}
 	
 	
 } // de la clase

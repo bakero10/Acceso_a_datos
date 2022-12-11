@@ -32,7 +32,7 @@ public class Main2 {
 	//	abd.imprimirDepartamento(10);
 	
 	//abd.demoJPQL();
-	abd.ejercicio07();
+	abd.ejercicio13();
 		
 		abd.desconectar();
 	
