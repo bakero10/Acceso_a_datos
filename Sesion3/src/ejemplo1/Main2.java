@@ -1,6 +1,7 @@
 package ejemplo1;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
@@ -32,7 +33,11 @@ public class Main2 {
 	//	abd.imprimirDepartamento(10);
 	
 	//abd.demoJPQL();
-	abd.ejercicio13();
+	//abd.ejercicio07();
+		//abd.incrementarSalario(23);
+		//abd.incrementarSalarioOficio("Empleado", 7);
+		//abd.incrementarSalarioDepartamento(20, 0);
+		System.out.println(abd.borrarEmpleado(1039));
 		
 		abd.desconectar();
 	

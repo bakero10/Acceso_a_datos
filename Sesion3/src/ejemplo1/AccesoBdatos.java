@@ -162,7 +162,7 @@ public class AccesoBdatos {
 	}
 	public void ejercicio04() {
 		//Empleados contratados a partir del 2003
-		List<Object[]> lista = em.createQuery("SELECT e.nombre , e.alta FROM EmpleadoEntity e WHERE  e.alta > 2003 ").getResultList();
+		List<Object[]> lista = em.createQuery("SELECT e.nombre , e.alta FROM EmpleadoEntity e WHERE year(e.alta) > 2003 ").getResultList();
 		for (Object[] objects : lista) {
 			System.out.println(objects[0]+" - "+ objects[1]);
 		}
@@ -183,7 +183,7 @@ public class AccesoBdatos {
 	}
 	public void ejercicio07() {
 		//Idem de la anterior pero para departamentos a partir de 5 empleados
-		List<Object[]> lista = em.createQuery("SELECT d.nombre ,COUNT (d.nombre), SUM (d.empleados.salario), MAX (d.empleados.salario) FROM DepartamentoEntity d GROUP BY d.nombre HAVING COUNT (d.nombre) > 5 ").getResultList();
+		List<Object[]> lista = em.createQuery("SELECT d.departamento.getNombre() ,COUNT (d), SUM (d.salario), MAX (d.salario) FROM EmpleadoEntity d GROUP BY d.departamento.getNombre() HAVING COUNT (d) >= 5 ").getResultList();
 		for (Object[] objects : lista) {
 			System.out.println(objects[0]+" - "+ objects[1]+" - "+objects[2]+" - "+objects[3]);
 		}
@@ -227,6 +227,46 @@ public class AccesoBdatos {
 			System.out.println(objects[0]+" - "+objects[1]);
 		}
 	}
+	//EJEERCICIO09
+	// Metodo public int incrementarSalario (int cantidad) para incrementar el salario de todos los empleados en la cantidad pasada
+	// como argumentos. Utiliza la sentencia UPDATE con parametros. El método devuelve el numero de filas modificadas.
+	public int incrementarSalario(int cantidad) {
+			int resultado;
+			em.getTransaction().begin();	//INICIAMOS LA TRANSACCION
+			resultado = em.createQuery("UPDATE EmpleadoEntity e SET e.salario = e.salario +: cantidad").setParameter("cantidad", cantidad).executeUpdate();
+			em.getTransaction().commit();	//EJECUTAMOS LA TRANSACCION
+		return resultado;
+	}
+	// Metodo public int incrementarSalarioOficio(String oficio,int cantidad). Idem del anterior pero solo para los empleados
+	// de un departamento concreto.
+	public int incrementarSalarioOficio(String oficio,int cantidad) {
+		int resultado;
+			em.getTransaction().begin();
+			resultado = em.createQuery("UPDATE EmpleadoEntity e SET e.salario= e.salario +: cantidad WHERE e.oficio like : oficio").setParameter("cantidad", cantidad).setParameter("oficio", oficio).executeUpdate();
+			em.getTransaction().commit();
+		return resultado;
+	}
+	// IMPORTANTE IMPORTANTE IMPORTANTE IMPORTANTE IMPORTANTE IMPORTANTE IMPORTANTE
 	
+	// Metodo public int incrementarSalarioDepartamento(int numDepartamento, int cantidad). Idem del anterior pero solo para
+	// los empleados de un departamento concreto.
+	public int incrementarSalarioDepartamento(int numDepartamento , int cantidad) {
+		int resultado;
+			em.getTransaction().begin();
+				resultado = em.createQuery("UPDATE EmpleadoEntity e SET e.salario = e.salario +: cantidad WHERE e.departamento.getDptoId() =: numDepartamento").setParameter("cantidad", cantidad).setParameter("numDepartamento", numDepartamento).executeUpdate();
+			em.getTransaction().commit();
+		return resultado;
+	}
+	// Metodo public int borrarEmpleado (int numEmpleado) para borrar el empleado que se pasa como argumento 
+	// (Nota: Despues de hacerlo comprueba el metodo anterior de tal forma qye si el empleado borrado es jefe 
+	// de algun otro empleado, este ultimo pasara a conetener null en su atribuo dirId). Utiliza la sentencia 
+	// DELETE con paramentros. El metodo devuelve el numero de filas borradas.
+	public int borrarEmpleado(int numEmpleado) {
+		int resultado;
+			em.getTransaction().begin();
+				resultado = em.createQuery("DELETE FROM EmpleadoEntity e WHERE e.empnoId = :numEmpleado").setParameter("numEmpleado", numEmpleado).executeUpdate();
+			em.getTransaction().commit();
+		return resultado;
+	}
 	
 } // de la clase
