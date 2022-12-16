@@ -34,10 +34,11 @@ public class Main2 {
 	
 	//abd.demoJPQL();
 	//abd.ejercicio07();
-		//abd.incrementarSalario(23);
-		//abd.incrementarSalarioOficio("Empleado", 7);
-		//abd.incrementarSalarioDepartamento(20, 0);
-		System.out.println(abd.borrarEmpleado(1039));
+	//abd.incrementarSalario(23);
+	//abd.incrementarSalarioOficio("Empleado", 7);
+	//abd.incrementarSalarioDepartamento(20, 0);
+	//System.out.println(abd.borrarEmpleado(1039));
+	System.out.println(abd.borarDepartament(20));
 		
 		abd.desconectar();
 	

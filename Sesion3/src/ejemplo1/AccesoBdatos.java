@@ -268,5 +268,17 @@ public class AccesoBdatos {
 			em.getTransaction().commit();
 		return resultado;
 	}
+	// Metodo public int borrarDepartamento(int numEmpleado) para borrar el departamento que se pasa como argumento.
+	// (Nota: Si el departamento borrado tiene empleados a su cargo, debido a la relacion establecida en el momento 
+	// de creacion de la entidad, no se borra ninguno de estos, dejando ademas el atributo departamento de sus empleados 
+	// con todos sus valores puestos a NULL excepto el dptoId que conserva su valor aunque corresponda a un departamento 
+	// qye ya no existe). Utiliza la sentencia DELETE con parametros. El metodo devuelve el numero de filas borradas.
+	public int borarDepartament(int numEmpleado) {
+		int resultado;
+			em.getTransaction().begin();
+			resultado =	em.createQuery("DELETE FROM DepartamentoEntity d WHERE d.dptoId =: numEmpleado").setParameter("numEmpleado", numEmpleado).executeUpdate();
+			em.getTransaction().commit();
+		return resultado;
+	}
 	
 } // de la clase
