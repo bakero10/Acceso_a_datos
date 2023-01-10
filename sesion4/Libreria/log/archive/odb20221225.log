@@ -1,0 +1,41 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-12-25 12:12:01 #1 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\sesion4\db\empleados.odb' is opened by 13384@DESKTOP-6Q7JQ8O
+
+[2022-12-25 12:12:01 #2 store] 
+Configuration path: ?
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-12-25 12:12:53 #1 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\sesion4\db\empleados.odb' has been recovered (tr. 1-2)
+
+[2022-12-25 12:12:53 #2 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\sesion4\db\empleados.odb' is opened by 22776@DESKTOP-6Q7JQ8O
+
+[2022-12-25 12:12:53 #3 store] 
+Configuration path: ?
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-12-25 12:14:30 #1 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\sesion4\db\jugadoresej12.odb' is opened by 24344@DESKTOP-6Q7JQ8O
+
+[2022-12-25 12:14:30 #2 store] 
+Configuration path: ?
+
+[2022-12-25 12:14:30 #3 type] 
+Type Ejercicio12.Socio is not enhanced.
+
+[2022-12-25 12:14:30 #4 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\sesion4\db\jugadoresej12.odb' is closed by 24344@DESKTOP-6Q7JQ8O
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-12-25 12:15:05 #1 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\sesion4\db\empleados.odb' is opened by 6864@DESKTOP-6Q7JQ8O
+
+[2022-12-25 12:15:05 #2 store] 
+Configuration path: ?
+

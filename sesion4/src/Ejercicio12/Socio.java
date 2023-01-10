@@ -1,4 +1,4 @@
-package Ejercicio03;
+package Ejercicio12;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,8 +11,7 @@ public class Socio {
 	private int estatura;
 	private int edad;
 	private String localidad;
-	
-	
+		
 	public Socio(int socioID, String nombre, int estatura, int edad, String localidad) {
 		this.socioID = socioID;
 		this.nombre = nombre;

@@ -1,4 +1,4 @@
-package Ejercicio03  ;
+package Ejercicio12;
 
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +24,7 @@ public class AccesoBdatos {
 	}
 	
 	public void desconectar() {
-		//IMPLEMENTANDO HIBERNATE
+		//IMPLEMENTANDO OBJECTDB
 		em.close();
 		emf.close();
 	}
@@ -39,13 +39,11 @@ public class AccesoBdatos {
 		
 	public List<Socio> consultaLocalidad(String localidad){
 			List<Socio> lista = null;	
-				
 		if(localidad.isEmpty()==false) { //Si localidad es distinto de vacio ejecuta lo de dentro
 			try {
 				List<Socio> lista2 = em.createQuery("SELECT s FROM Socio s WHERE localidad LIKE :localidad").setParameter("localidad", localidad).getResultList();		
-				Iterator <Socio> iter = lista2.iterator();
 									
-				if (iter.hasNext()) { //Si hay siguiente devolver� la lista con todos los socios, podriamos haber hecho lista2.size()>0
+				if (lista2.size() > 0) { //Si hay siguiente devolver� la lista con todos los socios, podriamos haber hecho lista2.size()>0
 					lista = lista2;
 				}else {
 					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
@@ -58,9 +56,8 @@ public class AccesoBdatos {
 								
 				//IMPLEMENTANDO HIBERNATE
 				List<Socio> lista2 = em.createQuery("SELECT s FROM Socio s").getResultList();		
-				Iterator <Socio> iter = lista2.iterator();
-									
-				if (iter.hasNext()) { //Si hay siguiente devolvera una lista con todos los socios
+				
+				if (lista2.size() > 0) { //Si hay siguiente devolvera una lista con todos los socios
 					lista = lista2;
 				}else {
 					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
@@ -73,7 +70,7 @@ public class AccesoBdatos {
 	}
 	
 
-	//AMPLIACION DEL CODIGO PARA INCORPORAR LOS NUEVO DEL ANIO DAM2 PARA ACTUALIZAR, BORRAR Y ANADIR SOCIOS	
+	//AMPLIACION DEL CODIGO PARA INCORPORAR LO NUEVO DEL ANIO DAM2 PARA ACTUALIZAR, BORRAR Y ANADIR SOCIOS	
 	public int actualizarSocio(int id,String nombre, int estatura, int edad, String localidad) {
 		Socio socioBuscado = em.find(Socio.class, id);
 		if (socioBuscado == null) // Si no existe el departamento con anterioridad no te deja modificarlo
@@ -97,7 +94,7 @@ public class AccesoBdatos {
 			return 0;
 		Socio s = new Socio((id.getSingleResult()+1), nombre, estatura, edad, localidad);
 		em.getTransaction().begin();
-		em.persist(s);					//pesist para añadir socio
+		em.persist(s);
 		em.getTransaction().commit();
 		return 1;	
 	} // de actualizarSocio
@@ -110,7 +107,7 @@ public class AccesoBdatos {
 			return 0;
 		}else {
 			em.getTransaction().begin();
-			em.remove(socioBuscado);		//remove se elminina el socio deseado
+			em.remove(socioBuscado);
 			em.getTransaction().commit();
 			return 1;
 		}

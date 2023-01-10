@@ -1,19 +1,15 @@
-package Ejercicio03;
+package Ejercicio12;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import Ejercicio12.Socio;
+public class MainCreacion {
 
-public class PruebasMain {
+	public static void main(String[] args) {
 
-	public static void main(String[] args) throws SQLException {
-		
 		Socio s1 = new Socio(1, "Juan", 120, 20, "Huesca");
 		Socio s2 = new Socio(2, "Pepe", 140, 20, "Huesca");
 		Socio s3 = new Socio(3, "Mario", 130, 20, "Zaragoza");
@@ -25,7 +21,6 @@ public class PruebasMain {
 		Socio s9 = new Socio(9, "dani", 172, 20, "Andorra");
 
 		ArrayList<Socio> lista = new ArrayList<Socio>();
-		
 		lista.add(s1);
 		lista.add(s2);
 		lista.add(s3);

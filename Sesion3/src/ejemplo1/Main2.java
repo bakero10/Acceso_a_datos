@@ -14,9 +14,9 @@ public class Main2 {
         
 		AccesoBdatos abd = new AccesoBdatos();
 		abd.conectar();
-	//	abd.imprimirDepartamento(90);
-	//	abd.imprimirDepartamento(40);
-	//	abd.imprimirDepartamento(10);
+		abd.imprimirDepartamento(90);
+		abd.imprimirDepartamento(40);
+		abd.imprimirDepartamento(10);
 		
     //  System.out.println(abd.insertarDepartamento(new DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
     //  System.out.println(abd.insertarDepartamento(new DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
@@ -33,12 +33,12 @@ public class Main2 {
 	//	abd.imprimirDepartamento(10);
 	
 	//abd.demoJPQL();
-	//abd.ejercicio07();
-	//abd.incrementarSalario(23);
-	//abd.incrementarSalarioOficio("Empleado", 7);
-	//abd.incrementarSalarioDepartamento(20, 0);
+	//abd.ejercicio004();
+	//System.out.println(abd.incrementarSalario(10));
+	//System.out.println(abd.incrementarSalarioOficio("Empleado", 7));
+	//System.out.println(abd.incrementarSalarioDepartamento(20, 20));
 	//System.out.println(abd.borrarEmpleado(1039));
-	System.out.println(abd.borarDepartament(20));
+	//System.out.println(abd.borrarDepartament(20));
 		
 		abd.desconectar();
 	
