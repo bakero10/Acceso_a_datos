@@ -26,24 +26,25 @@ public class AccesoBdatos {
 		em.close();
 		emf.close();
 	}
+	//METODO PARA BUSCAR DEPARTAMENTO
 	public DepartamentoEntity buscarDepartamento(int numDepartamento) {
 		return em.find(DepartamentoEntity.class, numDepartamento);
-	}// de m�todo buscarDepartamento
-	
-	public EmpleadoEntity buscarNombre (String nombre) {
-		return em.find(EmpleadoEntity.class, nombre);
+	}
+	//METODO PARA BUSCAR EMPLEADO PO ID
+	public EmpleadoEntity buscarNombre (int empnoId) {
+		return em.find(EmpleadoEntity.class, empnoId);
 		
 	}
 	
-	public void imprimirEmpleado() {
-		EmpleadoEntity ee;
-		ee = buscarNombre("Enrique Casado Alvarez");
-		System.out.println("El nombre es "+ee.getNombre());
-		System.out.println("Su oficio es "+ee.getOficio());
-		System.out.println("Su numero de id es "+ee.getEmpnoId());
-		
+	public void imprimirEmpleado(int empnoId) {
+		EmpleadoEntity emp;
+		emp = buscarNombre(empnoId);
+		if(emp == null) {
+			System.out.println("El empleado con id "+empnoId+". ¡No existe!");
+		}
+		String texto = "El nombre del empleado "+emp.getEmpnoId()+" es "+emp.getNombre();
+		System.out.println(texto);
 	}
-	
 	//
 	@SuppressWarnings("deprecation")
 	public void imprimirDepartamento (int numDepartamento) {
@@ -125,29 +126,24 @@ public class AccesoBdatos {
         //
         TypedQuery<DepartamentoEntity>tq2 =
 	            em.createQuery("SELECT d FROM DepartamentoEntity d", DepartamentoEntity.class);
-	        List<DepartamentoEntity> l2 = tq2.getResultList();
-	        for (DepartamentoEntity r2 : l2) {
+	        List<DepartamentoEntity> lista2 = tq2.getResultList();
+	        for (DepartamentoEntity r2 : lista2) {
 	            System.out.println("Nombre :  " + r2.getNombre()+ ", Localidad: "+ r2.getLocalidad());
 	        }
             System.out.println("------------------------------------------------------------------");
 	    //
         TypedQuery<Object[]>tq3 =
 	            em.createQuery("SELECT d.nombre, d.localidad FROM DepartamentoEntity  d", Object[].class);
-	        List<Object[]> l3 = tq3.getResultList();
-	        for (Object[] r3 : l3) {
+	        List<Object[]> lista3 = tq3.getResultList();
+	        for (Object[] object : lista3) {
 	            System.out.println(
-	            "Nombre :  " + r3[0] + ", Localidad: " + r3[1]);
+	            "Nombre :  " + object[0] + ", Localidad: " + object[1]);
 	    }   
             System.out.println("------------------------------------------------------------------");
 	    //*/
-	      TypedQuery<Object[]>tq4 =
-		            em.createQuery("SELECT d.nombre, d.localidad FROM DepartamentoEntity d"
-		            		+ " WHERE d.dptoId != :n", Object[].class);
-	        		tq4.setParameter("n", 10);
-		        List<Object[]> l4 = tq4.getResultList();
-		        for (Object[] r4 : l4) {
-		            System.out.println(
-		            "Nombre :  " + r4[0] + ", Localidad: " + r4[1]);
+		        List<Object[]> lista4 = em.createQuery("SELECT d.nombre, d.localidad FROM DepartamentoEntity d WHERE d.dptoId != :n").setParameter("n", 10).getResultList();
+		        for (Object[] object2 : lista4) {
+		            System.out.println("Nombre :  " + object2[0] + ", Localidad: " + object2[1]);
 		    }  
 	            System.out.println("------------------------------------------------------------------");
 	     
@@ -243,7 +239,8 @@ public class AccesoBdatos {
 	
 	public void ejercicio12() {
 		//Empleados sin jefe
-		List<Object[]> lista = em.createQuery("SELECT e.empnoId, e.nombre FROM EmpleadoEntity e WHERE e.dirId LIKE '%null%' ").getResultList();
+		List<Object[]> lista = em.createQuery("SELECT e.empnoId , e.nombre FROM EmpleadoEntity e WHERE e.dirId is null"
+				).getResultList();
 		for (Object[] objects : lista) {
 			System.out.println(objects[0]+" - "+objects[1]);
 		}

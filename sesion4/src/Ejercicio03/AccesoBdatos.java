@@ -43,9 +43,8 @@ public class AccesoBdatos {
 		if(localidad.isEmpty()==false) { //Si localidad es distinto de vacio ejecuta lo de dentro
 			try {
 				List<Socio> lista2 = em.createQuery("SELECT s FROM Socio s WHERE localidad LIKE :localidad").setParameter("localidad", localidad).getResultList();		
-				Iterator <Socio> iter = lista2.iterator();
-									
-				if (iter.hasNext()) { //Si hay siguiente devolver� la lista con todos los socios, podriamos haber hecho lista2.size()>0
+				
+				if (lista2.size() > 0) { //Si hay siguiente devolver� la lista con todos los socios, podriamos haber hecho lista2.size()>0
 					lista = lista2;
 				}else {
 					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
@@ -58,9 +57,8 @@ public class AccesoBdatos {
 								
 				//IMPLEMENTANDO HIBERNATE
 				List<Socio> lista2 = em.createQuery("SELECT s FROM Socio s").getResultList();		
-				Iterator <Socio> iter = lista2.iterator();
 									
-				if (iter.hasNext()) { //Si hay siguiente devolvera una lista con todos los socios
+				if (lista2.size()>0) { //Si hay siguiente devolvera una lista con todos los socios
 					lista = lista2;
 				}else {
 					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
