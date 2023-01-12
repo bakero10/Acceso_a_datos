@@ -46,7 +46,7 @@ public class AccesoBdatos {
 		System.out.println(texto);
 	}
 	//
-	@SuppressWarnings("deprecation")
+	
 	public void imprimirDepartamento (int numDepartamento) {
 		DepartamentoEntity d = buscarDepartamento(numDepartamento);
 		if (d==null)
@@ -79,7 +79,7 @@ public class AccesoBdatos {
 			
 			System.out.println(datos);
 		}
-	} // de metodo imprimirDepartamento
+	  } //de metodo imprimirDepartamento
 	
 	public boolean insertarDepartamento (DepartamentoEntity d) {
 		if (buscarDepartamento(d.getDptoId())!=null)
@@ -115,7 +115,7 @@ public class AccesoBdatos {
 		return true;
 	} // de modificarDepartamento
 	
-	public void demoJPQL() {
+	public void demoJPQL() {	//TODOS SON LO MISMO DE DISTINTAS FORMAS
 		
 		Query q1 = em.createQuery("SELECT COUNT(d) FROM DepartamentoEntity d");
         System.out.println("Total Departamentos: " + q1.getSingleResult());

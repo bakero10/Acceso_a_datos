@@ -1,0 +1,17 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2022-12-18 21:03:52 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\autoresLibros.odb' is opened by 5656@DESKTOP-U5R4K5T
+
+[2022-12-18 21:03:52 #2 store] 
+Configuration path: ?
+
+[2022-12-18 21:03:52 #3 type] 
+Type sesion4_ej14_2.Libro is not enhanced.
+
+[2022-12-18 21:03:52 #4 type] 
+Type sesion4_ej14_2.Autor is not enhanced.
+
+[2022-12-18 21:03:52 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\autoresLibros.odb' is closed by 5656@DESKTOP-U5R4K5T
+
