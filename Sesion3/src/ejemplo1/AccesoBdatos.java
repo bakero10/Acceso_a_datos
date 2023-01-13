@@ -35,15 +35,6 @@ public class AccesoBdatos {
 		
 	}
 	
-	public void imprimirEmpleado() {
-		EmpleadoEntity ee;
-		ee = buscarNombre("Enrique Casado Alvarez");
-		System.out.println("El nombre es "+ee.getNombre());
-		System.out.println("Su oficio es "+ee.getOficio());
-		System.out.println("Su numero de id es "+ee.getEmpnoId());
-		
-	}
-	
 	//
 	@SuppressWarnings("deprecation")
 	public void imprimirDepartamento (int numDepartamento) {
@@ -243,7 +234,7 @@ public class AccesoBdatos {
 	
 	public void ejercicio12() {
 		//Empleados sin jefe
-		List<Object[]> lista = em.createQuery("SELECT e.empnoId, e.nombre FROM EmpleadoEntity e WHERE e.dirId LIKE '%null%' ").getResultList();
+		List<Object[]> lista = em.createQuery("SELECT e.empnoId, e.nombre FROM EmpleadoEntity e WHERE e.dirId is null ").getResultList();
 		for (Object[] objects : lista) {
 			System.out.println(objects[0]+" - "+objects[1]);
 		}

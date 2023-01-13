@@ -33,7 +33,7 @@ public class Main2 {
 	//	abd.imprimirDepartamento(10);
 	
 	//abd.demoJPQL();
-	//abd.ejercicio004();
+	abd.ejercicio12();
 	//System.out.println(abd.incrementarSalario(10));
 	//System.out.println(abd.incrementarSalarioOficio("Empleado", 7));
 	//System.out.println(abd.incrementarSalarioDepartamento(20, 20));
