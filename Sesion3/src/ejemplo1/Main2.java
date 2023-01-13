@@ -14,14 +14,14 @@ public class Main2 {
         
 		AccesoBdatos abd = new AccesoBdatos();
 		abd.conectar();
-		abd.imprimirDepartamento(90);
-		abd.imprimirDepartamento(40);
-		abd.imprimirDepartamento(10);
+//		abd.imprimirDepartamento(90);
+//		abd.imprimirDepartamento(40);
+//		abd.imprimirDepartamento(10);
 		
     //  System.out.println(abd.insertarDepartamento(new DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
     //  System.out.println(abd.insertarDepartamento(new DepartamentoEntity(60,"Recursos Humanos", "Chimillas")));
     //  abd.imprimirDepartamento(60);
-		
+	//	abd.imprimirEmpleado(1034);
 	//	System.out.println(abd.modificarDepartamento(new DepartamentoEntity(88,"RRHH", "Huerrios")));
 	//	System.out.println(abd.modificarDepartamento(new DepartamentoEntity(60,"RRHH", "Esquedas")));
 	//	abd.imprimirDepartamento(60);
@@ -33,12 +33,21 @@ public class Main2 {
 	//	abd.imprimirDepartamento(10);
 	
 	//abd.demoJPQL();
+<<<<<<< HEAD
 	abd.ejercicio12();
 	//System.out.println(abd.incrementarSalario(10));
 	//System.out.println(abd.incrementarSalarioOficio("Empleado", 7));
 	//System.out.println(abd.incrementarSalarioDepartamento(20, 20));
 	//System.out.println(abd.borrarEmpleado(1039));
 	//System.out.println(abd.borrarDepartament(20));
+=======
+	//abd.ejercicio0001();
+	//System.out.println(abd.incrementarSalario1(10));
+	//System.out.println(abd.incrementarSalarioOficio1("Empleado", 100));
+	//System.out.println(abd.incrementarSalarioDepartamento1(10, 20));
+	//System.out.println(abd.borrarEmpleado(1034));
+	//System.out.println(abd.borrarDepartament(30));
+>>>>>>> branch 'master' of git@github.com:bakero10/Acceso_a_datos.git
 		
 		abd.desconectar();
 	

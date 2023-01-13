@@ -1,4 +1,4 @@
-package Ejercicio03  ;
+package sesion4_ej12;
 
 import java.util.Iterator;
 import java.util.List;
@@ -43,9 +43,10 @@ public class AccesoBdatos {
 		if(localidad.isEmpty()==false) { //Si localidad es distinto de vacio ejecuta lo de dentro
 			try {
 				List<Socio> lista2 = em.createQuery("SELECT s FROM Socio s WHERE localidad LIKE :localidad").setParameter("localidad", localidad).getResultList();		
-				
-				if (lista2.size() > 0) { //Si hay siguiente devolverÔøΩ la lista con todos los socios, podriamos haber hecho lista2.size()>0
-					lista = lista2;
+				Iterator <Socio> iter = lista2.iterator();
+									
+				if (iter.hasNext()) { //Si hay siguiente devolver· la lista con todos los socios, podriamos haber hecho lista2.size()>0
+					lista = lista2;;
 				}else {
 					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
 				}
@@ -57,9 +58,10 @@ public class AccesoBdatos {
 								
 				//IMPLEMENTANDO HIBERNATE
 				List<Socio> lista2 = em.createQuery("SELECT s FROM Socio s").getResultList();		
+				Iterator <Socio> iter = lista2.iterator();
 									
-				if (lista2.size()>0) { //Si hay siguiente devolvera una lista con todos los socios
-					lista = lista2;
+				if (iter.hasNext()) { //Si hay siguiente devolvera una lista con todos los socios
+					lista = lista2;;
 				}else {
 					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
 				}
@@ -95,7 +97,7 @@ public class AccesoBdatos {
 			return 0;
 		Socio s = new Socio((id.getSingleResult()+1), nombre, estatura, edad, localidad);
 		em.getTransaction().begin();
-		em.persist(s);					//pesist para a√±adir socio
+		em.persist(s);
 		em.getTransaction().commit();
 		return 1;	
 	} // de actualizarSocio
@@ -108,7 +110,7 @@ public class AccesoBdatos {
 			return 0;
 		}else {
 			em.getTransaction().begin();
-			em.remove(socioBuscado);		//remove se elminina el socio deseado
+			em.remove(socioBuscado);
 			em.getTransaction().commit();
 			return 1;
 		}
