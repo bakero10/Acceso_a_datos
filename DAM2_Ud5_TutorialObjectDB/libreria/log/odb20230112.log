@@ -102,3 +102,37 @@ Type sesion6_ej14_3.PersonalNoDocente is not enhanced.
 [2023-01-12 17:49:50 #6 store] 
 Database 'C:\Users\Bakero\eclipse-workspace\DAM2_Ud5_TutorialObjectDB\db\relacionHerencia.odb' is closed by 18416@DESKTOP-6Q7JQ8O
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:53:46 #1 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\DAM2_Ud5_TutorialObjectDB\db\socioTarjeta.odb' is opened by 17744@DESKTOP-6Q7JQ8O
+
+[2023-01-12 17:53:46 #2 store] 
+Configuration path: ?
+
+[2023-01-12 17:53:46 #3 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+[2023-01-12 17:53:46 #4 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:53:46 #5 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\DAM2_Ud5_TutorialObjectDB\db\socioTarjeta.odb' is closed by 17744@DESKTOP-6Q7JQ8O
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:53:51 #1 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\DAM2_Ud5_TutorialObjectDB\db\socioTarjeta.odb' is opened by 4852@DESKTOP-6Q7JQ8O
+
+[2023-01-12 17:53:51 #2 store] 
+Configuration path: ?
+
+[2023-01-12 17:53:51 #3 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+[2023-01-12 17:53:51 #4 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:53:51 #5 store] 
+Database 'C:\Users\Bakero\git\Acceso_a_datos\DAM2_Ud5_TutorialObjectDB\db\socioTarjeta.odb' is closed by 4852@DESKTOP-6Q7JQ8O
+

@@ -37,8 +37,7 @@ public class AccesoBdatos {
 	}
 	
 	public void imprimirEmpleado(int empnoId) {
-		EmpleadoEntity emp;
-		emp = buscarNombre(empnoId);
+		EmpleadoEntity emp = buscarNombre(empnoId);
 		if(emp == null) {
 			System.out.println("El empleado con id "+empnoId+". ¡No existe!");
 		}
@@ -115,6 +114,13 @@ public class AccesoBdatos {
 		return true;
 	} // de modificarDepartamento
 	
+	public int borrarDepartamento1(int numDepartamento) {
+		int resultado;
+			em.getTransaction().begin();
+				resultado = em.createQuery("DELETE FROM DepartamentoEntity d WHERE d.dptoId =: c").setParameter("c", numDepartamento).executeUpdate();
+			em.getTransaction().commit();
+		return resultado;
+	}
 	public void demoJPQL() {	//TODOS SON LO MISMO DE DISTINTAS FORMAS
 		
 		Query q1 = em.createQuery("SELECT COUNT(d) FROM DepartamentoEntity d");
@@ -223,7 +229,7 @@ public class AccesoBdatos {
 	
 	public void ejercicio10() {
 		//Nombre y total de empleados de TODOS los departamentos
-		List<Object[]> lista = em.createQuery("SELECT d.nombre ,COUNT (d.getEmpleados()) FROM DepartamentoEntity d GROUP BY d.nombre ").getResultList();
+		List<Object[]> lista = em.createQuery("SELECT d.nombre, COUNT(e) FROM DepartamentoEntity d left join d.empleados e group by d.nombre ").getResultList();
 		for (Object[] objects : lista) {
 			System.out.println(objects[0]+" - "+objects[1]);
 		}

@@ -13,7 +13,7 @@ public class Tarjeta {
 	private int numero;
 	private Date caducidad;
 	
-	@OneToOne(mappedBy="tarjeta")
+	@OneToOne(mappedBy="tarjeta")	//de la clase socio el one to one es con el atributo tarjeta
 	private Socio socio;
 	
 	
