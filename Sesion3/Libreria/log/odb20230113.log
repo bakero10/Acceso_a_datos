@@ -1,0 +1,123 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 10:38:03 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 2452@B01-PC04
+
+[2023-01-13 10:38:03 #2 store] 
+Configuration path: ?
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 10:38:55 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' has been recovered (tr. 1-2)
+
+[2023-01-13 10:38:55 #2 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 6428@B01-PC04
+
+[2023-01-13 10:38:55 #3 store] 
+Configuration path: ?
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:53:45 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 3808@B01-PC04
+
+[2023-01-13 11:53:45 #2 store] 
+Configuration path: ?
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:55:16 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 10024@B01-PC04
+
+[2023-01-13 11:55:16 #2 store] 
+Configuration path: ?
+
+[2023-01-13 11:55:16 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-13 11:55:16 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-13 11:55:16 #5 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is closed by 10024@B01-PC04
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:55:24 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 4992@B01-PC04
+
+[2023-01-13 11:55:24 #2 store] 
+Configuration path: ?
+
+[2023-01-13 11:55:24 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-13 11:55:24 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:55:43 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 10668@B01-PC04
+
+[2023-01-13 11:55:43 #2 store] 
+Configuration path: ?
+
+[2023-01-13 11:55:43 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-13 11:55:43 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:56:05 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 12236@B01-PC04
+
+[2023-01-13 11:56:05 #2 store] 
+Configuration path: ?
+
+[2023-01-13 11:56:05 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-13 11:56:05 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-13 11:56:05 #5 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is closed by 12236@B01-PC04
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:56:27 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 8232@B01-PC04
+
+[2023-01-13 11:56:27 #2 store] 
+Configuration path: ?
+
+[2023-01-13 11:56:27 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-13 11:56:27 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-13 11:56:27 #5 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is closed by 8232@B01-PC04
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-13 11:57:16 #1 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is opened by 5732@B01-PC04
+
+[2023-01-13 11:57:16 #2 store] 
+Configuration path: ?
+
+[2023-01-13 11:57:16 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-13 11:57:16 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-13 11:57:16 #5 store] 
+Database 'C:\Users\DAM2Alu1\git\Acceso_a_datos\Sesion3\db\empleados.odb' is closed by 5732@B01-PC04
+

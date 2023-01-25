@@ -33,21 +33,18 @@ public class Main2 {
 	//	abd.imprimirDepartamento(10);
 	
 	//abd.demoJPQL();
-<<<<<<< HEAD
-	abd.ejercicio12();
+	abd.ejercicioSS();
 	//System.out.println(abd.incrementarSalario(10));
 	//System.out.println(abd.incrementarSalarioOficio("Empleado", 7));
 	//System.out.println(abd.incrementarSalarioDepartamento(20, 20));
 	//System.out.println(abd.borrarEmpleado(1039));
 	//System.out.println(abd.borrarDepartament(20));
-=======
 	//abd.ejercicio0001();
 	//System.out.println(abd.incrementarSalario1(10));
 	//System.out.println(abd.incrementarSalarioOficio1("Empleado", 100));
 	//System.out.println(abd.incrementarSalarioDepartamento1(10, 20));
 	//System.out.println(abd.borrarEmpleado(1034));
 	//System.out.println(abd.borrarDepartament(30));
->>>>>>> branch 'master' of git@github.com:bakero10/Acceso_a_datos.git
 		
 		abd.desconectar();
 	

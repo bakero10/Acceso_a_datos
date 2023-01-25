@@ -36,8 +36,7 @@ public class AccesoBdatos {
 		
 	}
 	
-<<<<<<< HEAD
-=======
+
 	public void imprimirEmpleado(int empnoId) {
 		EmpleadoEntity emp = buscarNombre(empnoId);
 		if(emp == null) {
@@ -46,8 +45,7 @@ public class AccesoBdatos {
 		String texto = "El nombre del empleado "+emp.getEmpnoId()+" es "+emp.getNombre();
 		System.out.println(texto);
 	}
->>>>>>> branch 'master' of git@github.com:bakero10/Acceso_a_datos.git
-	//
+
 	
 	public void imprimirDepartamento (int numDepartamento) {
 		DepartamentoEntity d = buscarDepartamento(numDepartamento);
@@ -157,7 +155,13 @@ public class AccesoBdatos {
 	            System.out.println("------------------------------------------------------------------");
 	     
 	}// de demoJPQL
-	
+	public void ejercicioSS() {
+		List<Object[]> lista = em.createQuery("SELECT e.nombre , e.alta FROM EmpleadoEntity e ").getResultList();
+		for (Object[] objects : lista) {
+			System.out.println(objects[0]+" - "+objects[1]);
+		}
+	}
+
 	public void ejercicio01() {
 		//Nombre y fecha de alta de todos los empleados
 		List<Object[]> lista = em.createQuery("SELECT e.nombre , e.alta FROM EmpleadoEntity e").getResultList();
@@ -248,12 +252,7 @@ public class AccesoBdatos {
 	
 	public void ejercicio12() {
 		//Empleados sin jefe
-<<<<<<< HEAD
-		List<Object[]> lista = em.createQuery("SELECT e.empnoId, e.nombre FROM EmpleadoEntity e WHERE e.dirId is null ").getResultList();
-=======
-		List<Object[]> lista = em.createQuery("SELECT e.empnoId , e.nombre FROM EmpleadoEntity e WHERE e.dirId is null"
-				).getResultList();
->>>>>>> branch 'master' of git@github.com:bakero10/Acceso_a_datos.git
+		List<Object[]> lista = em.createQuery("SELECT e.empnoId, e.nombre FROM EmpleadoEntity e WHERE e.dirId is null ").getResultList();	
 		for (Object[] objects : lista) {
 			System.out.println(objects[0]+" - "+objects[1]);
 		}

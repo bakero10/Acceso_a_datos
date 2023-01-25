@@ -8,11 +8,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import Ejercicio12.Socio;
-
 public class PruebasMain {
 
 	public static void main(String[] args) throws SQLException {
+		
 		
 		Socio s1 = new Socio(1, "Juan", 120, 20, "Huesca");
 		Socio s2 = new Socio(2, "Pepe", 140, 20, "Huesca");
@@ -24,30 +23,28 @@ public class PruebasMain {
 		Socio s8 = new Socio(8, "Santi", 190, 20, "Galicia");
 		Socio s9 = new Socio(9, "dani", 172, 20, "Andorra");
 
-		ArrayList<Socio> lista = new ArrayList<Socio>();
-		
-		lista.add(s1);
-		lista.add(s2);
-		lista.add(s3);
-		lista.add(s4);
-		lista.add(s5);
-		lista.add(s6);
-		lista.add(s7);
-		lista.add(s8);
-		lista.add(s9);
-
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("db/jugadoresej12.odb");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("db/jugadoresej3.odb");
 		EntityManager em = emf.createEntityManager();
-
+		
 		em.getTransaction().begin();
-		for (Socio s : lista) {
-			em.persist(s);
-		}
+		em.persist(s1);
+		em.persist(s2);
+		em.persist(s3);
+		em.persist(s4);
+		em.persist(s5);
+		em.persist(s6);
+		em.persist(s7);
+		em.persist(s8);
+		em.persist(s9);
+
 		em.getTransaction().commit();
 		
 		em.close();
 		emf.close();
-
+		
+		
+		
+		
 	}
 
 }
