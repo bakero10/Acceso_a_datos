@@ -1,11 +1,15 @@
 package Ejercicios;
 
+import java.util.Iterator;
+import java.util.TreeSet;
+
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Projections;
 
 public class Ejercicio {
 
@@ -45,12 +49,38 @@ public class Ejercicio {
 			System.out.println(d.getString("name"));
 		}
 	}
+	
+	private static void listarCiudadesPais(String pais) {
+		FindIterable<Document> lista = collection.find();
+		for (Document d : lista) {
+			if(d.getString("country").equals(pais)) {
+				System.out.println(d.getString("name"));
+			}
+		}
+	}
+	
+	private static void listarPaises() {
+		TreeSet<String> ts = new TreeSet<>();
 
+        FindIterable<Document> resultDocument = collection.find().projection(Projections.include("name"))
+                .projection(Projections.exclude("_id", "name", "timezone", "population", "location"));
+        
+        Iterator<Document> it = resultDocument.iterator();
+        while (it.hasNext()) {
+            ts.add(it.next().getString("country"));
+        }
+        
+        for (String s : ts) {
+            System.out.println(s);
+        }
+	}
+	
 	public static void main(String[] args) {
 		conectar();
-		// System.out.println(insertarCiudad(new
-		// Ciudad("Huesca","ES","Europe/Madrid",60000,0,42)));
-		listarCiudades();
+		// System.out.println(insertarCiudad(new Ciudad("Huesca","ES","Europe/Madrid",60000,0,42)));
+		// listarCiudades();
+		// listarCiudadesPais("ES");
+		listarPaises();
 		desconectar();
 
 	}
