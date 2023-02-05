@@ -30,8 +30,8 @@ public class _04b_RecuperandoAlgunosDocumentos {
 		System.out.println("Colecci�n sampleCollection seleccionada");
 		//
 		ArrayList<String> al = new ArrayList<String>();
-		Document criterios = new Document("description", "database");
-		criterios.append("likes", new Document("$gte", 50));
+		Document criterios = new Document("description", "database")
+		.append("likes", new Document("$gte", 50));
 
 		FindIterable<Document> resultDocument = collection.find(criterios);
 //			.projection(Projections.include("description",...."))
