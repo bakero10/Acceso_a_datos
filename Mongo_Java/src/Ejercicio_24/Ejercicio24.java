@@ -21,10 +21,10 @@ public class Ejercicio24 {
 	public static void main(String[] args) {
 		
 		Ciudad c =  new Ciudad("Huesconsin","ES","Europe/Madrid",43000,234432343,223443435);
-		//System.out.println(insertaCiudad(c));
+		System.out.println(insertaCiudad(c));
 		//listarCiudades();
 		//listarCiudadesPais("ES");
-		listarPaises();
+		//listarPaises();
 	}
 		private static boolean insertaCiudad(Ciudad ciudad) {
 		
