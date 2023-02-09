@@ -267,7 +267,7 @@ public class Ejer {
 	}
 
 	public static void ejercicio23() {
-		// 22. Elimina las coordenadas de Gibraltar (el "español", no el americano).
+		// 22. Elimina las coordenadas de Gibraltar (el "español", no el americano). DE PUTA MADRE QUE CREO QUE YA FUNCION
 		System.out.println(collection.updateOne(new Document("name", "Huesca"),
 				new Document("$unset", new Document("population", 1))));
 	}
