@@ -1,0 +1,32 @@
+<list>
+  <Serie>
+    <id>1</id>
+    <titulo>La casa de papel</titulo>
+    <anyo>2010</anyo>
+    <descripcion>Robo en un banco</descripcion>
+  </Serie>
+  <Serie>
+    <id>2</id>
+    <titulo>Stranger Thinks</titulo>
+    <anyo>2014</anyo>
+    <descripcion>Serie de monstruos</descripcion>
+  </Serie>
+  <Serie>
+    <id>3</id>
+    <titulo>Your Honor</titulo>
+    <anyo>2008</anyo>
+    <descripcion>El honor de un juez</descripcion>
+  </Serie>
+  <Serie>
+    <id>4</id>
+    <titulo>Peaky Blinders</titulo>
+    <anyo>2022</anyo>
+    <descripcion>Londres años 60 y 70</descripcion>
+  </Serie>
+  <Serie>
+    <id>5</id>
+    <titulo>Breaking Bad</titulo>
+    <anyo>2017</anyo>
+    <descripcion>Profesor drogata</descripcion>
+  </Serie>
+</list>
