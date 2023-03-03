@@ -20,7 +20,7 @@ import com.google.gson.JsonParser;
 import Ejercicios.Pelicula;
 
 public class Ejercicios {
-
+	
 //	public static void main(String[] args) {
 //		Scanner s = new Scanner(System.in);
 //		/*
