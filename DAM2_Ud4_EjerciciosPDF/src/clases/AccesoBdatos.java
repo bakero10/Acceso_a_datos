@@ -68,12 +68,8 @@ public class AccesoBdatos {
 				//IMPLEMENTANDO HIBERNATE
 				Query consultaHibernate = session.createQuery("from Socio");
 				List<Socio> lista2 = consultaHibernate.list();
-				Iterator <Socio> iter = lista2.iterator();
-									
-				if (iter.hasNext()) { //Si hay siguiente devolvera una lista con todos los socios
-					lista = lista2;;
-				}else {
-					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
+				for (Socio socio : lista2) {
+					lista.add(socio);
 				}
 				}catch(Exception sqle) {
 					System.out.println("Error en la consulta para mostrar todos los socios");

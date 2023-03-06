@@ -35,15 +35,23 @@ public class PruebasMain {
 		
 		SessionFactory sesion = SessionFactoryUtil.getSessionFactory();
 		Session session = sesion.openSession();
+		
 		Query consultaHibernate = session.createQuery("from Socio");
 		List<Socio> lista = consultaHibernate.list();
-		Iterator <Socio> iter = lista.iterator();
-		while (iter.hasNext())
-		{
-		   //extraer el objeto
-			Socio   s = (Socio) iter.next(); 
-		   System.out.println(s.getLocalidad());		   
+		
+		//PARTE MIA 
+		for (Socio socio : lista) {
+			System.out.println(socio.getLocalidad());
 		}
+		//PARTE SANTI
+		
+//		Iterator <Socio> iter = lista.iterator();
+//		while (iter.hasNext())
+//		{
+//		   //extraer el objeto
+//			Socio   s = (Socio) iter.next(); 
+//		   System.out.println(s.getLocalidad());		   
+//		}
 		
 		session.close();
 		
