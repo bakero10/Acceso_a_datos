@@ -1,0 +1,251 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:48:57 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is opened by 9192@DESKTOP-U5R4K5T
+
+[2023-01-12 17:48:57 #2 store] 
+Configuration path: ?
+
+[2023-01-12 17:48:57 #3 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:48:57 #4 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:49:31 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' has been recovered (tr. 6-6)
+
+[2023-01-12 17:49:31 #2 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is opened by 2732@DESKTOP-U5R4K5T
+
+[2023-01-12 17:49:31 #3 store] 
+Configuration path: ?
+
+[2023-01-12 17:49:31 #4 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:49:31 #5 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+[2023-01-12 17:49:31 #6 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is closed by 2732@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:49:35 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is opened by 2468@DESKTOP-U5R4K5T
+
+[2023-01-12 17:49:35 #2 store] 
+Configuration path: ?
+
+[2023-01-12 17:49:35 #3 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:49:35 #4 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:50:33 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is opened by 10616@DESKTOP-U5R4K5T
+
+[2023-01-12 17:50:33 #2 store] 
+Configuration path: ?
+
+[2023-01-12 17:50:33 #3 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+[2023-01-12 17:50:33 #4 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:50:33 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is closed by 10616@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 17:50:49 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is opened by 9868@DESKTOP-U5R4K5T
+
+[2023-01-12 17:50:49 #2 store] 
+Configuration path: ?
+
+[2023-01-12 17:50:49 #3 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+[2023-01-12 17:50:49 #4 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 17:50:49 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is closed by 9868@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:16:56 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is opened by 9628@DESKTOP-U5R4K5T
+
+[2023-01-12 21:16:56 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:16:56 #3 type] 
+Type sesion6_ej14_1.Socio is not enhanced.
+
+[2023-01-12 21:16:56 #4 type] 
+Type sesion6_ej14_1.Tarjeta is not enhanced.
+
+[2023-01-12 21:16:56 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\socioTarjeta.odb' is closed by 9628@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:17:07 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 13260@DESKTOP-U5R4K5T
+
+[2023-01-12 21:17:07 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:17:07 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:17:07 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:17:59 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 10588@DESKTOP-U5R4K5T
+
+[2023-01-12 21:17:59 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:17:59 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:17:59 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:18:08 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 9112@DESKTOP-U5R4K5T
+
+[2023-01-12 21:18:08 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:18:08 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:18:08 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:18:21 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 9264@DESKTOP-U5R4K5T
+
+[2023-01-12 21:18:21 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:18:21 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:18:21 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:18:32 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 12780@DESKTOP-U5R4K5T
+
+[2023-01-12 21:18:32 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:18:32 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:18:32 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:21:12 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 12468@DESKTOP-U5R4K5T
+
+[2023-01-12 21:21:12 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:21:12 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:21:12 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:21:35 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 2300@DESKTOP-U5R4K5T
+
+[2023-01-12 21:21:35 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:21:35 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:21:35 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-12 21:21:35 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is closed by 2300@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:22:23 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 516@DESKTOP-U5R4K5T
+
+[2023-01-12 21:22:23 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:22:23 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:22:23 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-12 21:22:23 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is closed by 516@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:29:58 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 8448@DESKTOP-U5R4K5T
+
+[2023-01-12 21:29:58 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:29:58 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:29:58 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-12 21:29:58 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is closed by 8448@DESKTOP-U5R4K5T
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-12 21:30:06 #1 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is opened by 6092@DESKTOP-U5R4K5T
+
+[2023-01-12 21:30:06 #2 store] 
+Configuration path: ?
+
+[2023-01-12 21:30:06 #3 type] 
+Type ejemplo1.DepartamentoEntity is not enhanced.
+
+[2023-01-12 21:30:06 #4 type] 
+Type ejemplo1.EmpleadoEntity is not enhanced.
+
+[2023-01-12 21:30:06 #5 store] 
+Database 'C:\Users\Santiago R\git\ProyectosEclipse\DAM2_TutorialObjectDB\db\empleados.odb' is closed by 6092@DESKTOP-U5R4K5T
+

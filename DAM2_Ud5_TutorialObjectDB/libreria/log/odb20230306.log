@@ -1,0 +1,39 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-03-06 18:40:58 #1 store] 
+Database 'C:\Users\Bakero\eclipse-workspace\DAM2_Ud5_TutorialObjectDB\db\autoresLibros.odb' is opened by 11108@DESKTOP-6Q7JQ8O
+
+[2023-03-06 18:40:58 #2 store] 
+Configuration path: ?
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-03-06 18:41:12 #1 store] 
+Database 'C:\Users\Bakero\eclipse-workspace\DAM2_Ud5_TutorialObjectDB\db\autoresLibros.odb' is opened by 14352@DESKTOP-6Q7JQ8O
+
+[2023-03-06 18:41:12 #2 store] 
+Configuration path: ?
+
+[2023-03-06 18:41:12 #3 type] 
+Type sesion6_ej14_2.Libro is not enhanced.
+
+[2023-03-06 18:41:12 #4 type] 
+Type sesion6_ej14_2.Autor is not enhanced.
+
+[2023-03-06 18:41:12 #5 store] 
+Database 'C:\Users\Bakero\eclipse-workspace\DAM2_Ud5_TutorialObjectDB\db\autoresLibros.odb' is closed by 14352@DESKTOP-6Q7JQ8O
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-03-06 18:41:17 #1 store] 
+Database 'C:\Users\Bakero\eclipse-workspace\DAM2_Ud5_TutorialObjectDB\db\autoresLibros.odb' is opened by 12064@DESKTOP-6Q7JQ8O
+
+[2023-03-06 18:41:17 #2 store] 
+Configuration path: ?
+
+[2023-03-06 18:41:17 #3 type] 
+Type sesion6_ej14_2.Libro is not enhanced.
+
+[2023-03-06 18:41:17 #4 type] 
+Type sesion6_ej14_2.Autor is not enhanced.
+

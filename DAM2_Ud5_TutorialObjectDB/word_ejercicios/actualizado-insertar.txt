@@ -1,0 +1,36 @@
+Recuperar un EmpleadoEntity por ID:
+	- EmpleadoEntity e1 = em.find(EmpleadoEntity.class, 10);
+	- EmpleadoEntity e2 = em.createQuery("select e from EmpleadoEntity e where dptoId = :id").setParameter("id", 10).getSingleResult();
+
+Recuperar unas columnas específicas de un objeto:
+	- List<Object[]> lista = em.createQuery("select e.nombre, e.alta from EmpleadoEntity e").getResultList(); --> Para muchos empleados
+	- Object[] empleado = (Object[]) em.createQuery("select e.nombre, e.salario from EmpleadoEntity e where e.empnoId = :id").setParameter("id", 1039).getSingleResult(); --> Para un solo empleado
+
+PARA HACER UN INSERT, UPDATE O DELETE HAY QUE INICIAR LA TRANSACTION
+
+	em.getTransaction.begin();
+
+		Insertar un EmpleadoEntity de dos formas:
+			- em.persist(empleado); --> el empleado es un objeto EmpleadoEntity
+			- em.createQuery("INSERT INTO EmpleadoEntity (id, nombre_columna, nombre_columna) VALUES (?,?,?)"
+				.setParameter(1, valor)
+			        .setParameter(2, valor)
+			        .setParameter(3, valor)
+			        .executeUpdate();
+
+		Eliminar un EmpleadoEntity de dos formas:
+			- em.remove(empleado);  --> el empleado es un objeto EmpleadoEntity
+			- em.createQuery("delete from EmpleadoEntity where dptoId = :id").setParameter("id", 10).executeUpdate();
+
+		Actualizar empleados:
+			- em.createQuery("update EmpleadoEntity set nombre=:nombre, oficio=:oficio where empnoId = :empnoId").setParameter("nombre", "Raul")
+				.setParameter("oficio", "Empleado").setParameter("empnoId", 1010).executeUpdate();
+			- public int actualizarSocio(Socio s) {
+				Socio s2 = em.find(Socio.class, s.getSocioId());
+				s2.setEdad(s.getEdad());
+				s2.setEstatura(s.getEstatura());
+				s2.setLocalidad(s.getLocalidad());
+				s2.setNombre(s.getNombre());
+			  }
+
+	em.getTransaction.commit();
