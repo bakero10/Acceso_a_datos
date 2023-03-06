@@ -56,12 +56,8 @@ public class AccesoBdatos {
 				Query consultaHibernate = session.createSQLQuery("CALL buscarLocalidad(:localidad)").addEntity(Socio.class).setParameter("localidad",localidad);
 				
 				List<Socio> lista2 = consultaHibernate.list();
-				Iterator <Socio> iter = lista2.iterator();
-									
-				if (iter.hasNext()) { //Si hay siguiente devolverá la lista con todos los socios
-					lista = lista2;;
-				}else {
-					lista = null; //Si no encuentra resultados, devolvera null (en este caso nunca se vera esto, por que en el unico caso de que devolviera null, seria que no funcionara la conexion, o la consulta este mal, en cuyo caso saltara un error)
+				for (Socio socio : lista2) {
+					lista.add(socio);
 				}
 			}catch(Exception sqle) {
 				System.out.println("Error en la consulta para mostrar todos los socios");
