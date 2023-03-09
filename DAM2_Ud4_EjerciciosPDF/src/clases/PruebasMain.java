@@ -53,6 +53,7 @@ public class PruebasMain {
 //		   System.out.println(s.getLocalidad());		   
 //		}
 		
+		
 		session.close();
 		
 	}

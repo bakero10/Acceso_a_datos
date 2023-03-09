@@ -51,8 +51,8 @@ public class AccesoBdatos {
 		if(localidad.isEmpty()==false) { //Si localidad es distinto de vacio ejecuta lo de dentro
 			try {
 				//IMPLEMENTANDO HIBERNATE
-				//Query consultaHibernate = session.createQuery("from Socio as soc where soc.localidad = :localidad").setString("localidad", localidad);
-				//Query consultaHibernate = session.createQuery("from buscarLocalidad (:localidad)").setString("localidad", localidad);
+				//Query consultaHibernate1 = session.createQuery("from Socio as soc where soc.localidad = :localidad").setString("localidad", localidad);
+				//Query consultaHibernate2 = session.createQuery("from buscarLocalidad (:localidad)").setString("localidad", localidad);
 				Query consultaHibernate = session.createSQLQuery("CALL buscarLocalidad(:localidad)").addEntity(Socio.class).setParameter("localidad",localidad);
 				
 				List<Socio> lista2 = consultaHibernate.list();
@@ -84,10 +84,10 @@ public class AccesoBdatos {
 		try {
 			//IMPLEMENTANDO HIBERNATE
 			Transaction tx= session.beginTransaction();	//Asi iniciariamos una transaccion,	
-			Socio socio = (Socio) session.load(Socio.class, (int) id);
-			
-			socio.setNombre(nombre);socio.setEstatura(estatura);socio.setEdad(edad);socio.setLocalidad(localidad);
-			session.update(socio);
+			Socio socio = (Socio) session.load(Socio.class, (int) id); // carga el objeto Socio con id que le pasamos
+
+			socio.setNombre(nombre);socio.setEstatura(estatura);socio.setEdad(edad);socio.setLocalidad(localidad); // ponemos datos nuevos del socio
+			session.update(socio);	//actualizamos el socio
 			
 			tx.commit(); //Hacemos commit antes del return		
 			return 1;
@@ -97,27 +97,30 @@ public class AccesoBdatos {
 		}
 		
 	}// del metodo actualizarSocio
-	
-	
-		
+			public Socio devuelveSocioPorNombre(String nombre) {
+				
+					Transaction tx = session.beginTransaction();
+					Socio socio = (Socio) session.load(Socio.class, (String) nombre);
+					tx.commit();
+					return socio;
+				
+			}
 	
 	public int aniadirSocio(String nombre, int estatura, int edad, String localidad) {
 		try {
 			//IMPLEMENTANDO HIBERNATE
-			Transaction tx= session.beginTransaction();
+			Transaction tx= session.beginTransaction();		//ABRIMOS CONEXION
 			
-			//Conseguimos el ultimo id y le sumamos 1
+									//Conseguimos el ultimo id y le sumamos 1
 			String hql = "select socio.socioId from Socio as socio order by socio.socioId desc";
-			//String hql = "SELECT socioID from Socio order by socioID desc limit 1";
+									//String hql = "SELECT socioID from Socio order by socioID desc limit 1";
 			Query q = session.createQuery(hql);
-			q.setMaxResults(1); //Esto hay que ponerlo por que en lenguaje hql no se pude poner limit 1, asi que hay que especificarlo con
-								//este metodo
-			
+			q.setMaxResults(1); 	//En lenguaje hql no se pude poner limit 1, asi que hay que especificarlo con este metodo
 			int ultimoID = (int) q.uniqueResult();
 			Socio socio = new Socio((ultimoID+1),nombre,estatura,edad,localidad);
-			session.save(socio);
+			session.save(socio);	// Para guardar un socio en hibernate
 			
-			tx.commit();
+			tx.commit();									//CERRAMOS CONEXION
 			return 1;
 			
 			
@@ -127,7 +130,9 @@ public class AccesoBdatos {
 		}
 	}// del metodo aniadirSocio
 	
-	
+	// SESSION.GET Y SESSION.LOAD ES LO MISMO 
+	// La diferencia es que  get() si ese objeto no existe con esa ID, te devolverá null,
+	// mientras que con load() si no existe un objeto con esa ID, te dará un Exception.
 	
 	public int borrarSocio(int id) {
 		
@@ -136,7 +141,7 @@ public class AccesoBdatos {
 			Socio socio = (Socio) session.get(Socio.class, (int) id);
 			
 			if(socio == null) {
-				System.out.println("Noi existe el socio");
+				System.out.println("No existe el socio");
 				return 0;
 			}else {
 				session.delete(socio);
