@@ -18,8 +18,8 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "clientes")
-public class Cliente implements Serializable{
+@Table(name = "paciente")
+public class Paciente implements Serializable{
 	
 	/**
 	 * 
@@ -28,7 +28,7 @@ public class Cliente implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private String dni;
 	
 	@NotNull
 	@Column(name = "fecha_alta")
@@ -52,35 +52,32 @@ public class Cliente implements Serializable{
 	@Email
 	private String email;
 	
-	@NotEmpty
-	private String dni;
-	
 	//CONSTRUCTOR
-	public Cliente(Long id, @NotNull Date fecha_alta, @NotEmpty String nombre, @NotEmpty String apellido,
-			@NotEmpty String direccion, @NotEmpty int telefono, @NotEmpty @Email String email, @NotEmpty String dni) {
+	public Paciente(String dni, @NotNull Date fecha_alta, @NotEmpty String nombre, @NotEmpty String apellido,
+			@NotEmpty String direccion, @NotEmpty int telefono, @NotEmpty @Email String email) {
 		super();
-		this.id = id;
+		this.dni = dni;
 		this.fecha_alta = fecha_alta;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.email = email;
-		this.dni = dni;
+		
 	}
 	
-	public Cliente() {
+	public Paciente() {
 		
 	}
 	
 	//GETTERS & SETTERS
 	
-	public Long getId() {
-		return id;
+	public String getDni() {
+		return dni;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public Date getFecha_alta() {
@@ -131,12 +128,5 @@ public class Cliente implements Serializable{
 		this.email = email;
 	}
 
-	public String getDni() {
-		return dni;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
 
 }

@@ -8,10 +8,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dam.springboot.app.models.entity.Cliente;
+import com.dam.springboot.app.models.entity.Doctor;
 
 @Repository
-public class ClienteDaoImpl implements IClienteDao {
+public class DoctorDaoImpl implements IDoctorDao {
 
 	@PersistenceContext
 	private EntityManager em;
@@ -19,31 +19,31 @@ public class ClienteDaoImpl implements IClienteDao {
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
 	@Override
-	public List<Cliente> findAll() {
+	public List<Doctor> findAll() {
 		// TODO Auto-generated method stub
-		return em.createQuery("from Cliente").getResultList();
+		return em.createQuery("from Doctor").getResultList();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Cliente findOne(Long id) {
-		return em.find(Cliente.class, id);
+	public Doctor findOne(String dni) {
+		return em.find(Doctor.class, dni);
 	}
 
 	@Override
 	@Transactional
-	public void save(Cliente cliente) {
-		if (cliente.getId() != null && cliente.getId() > 0) {
-			em.merge(cliente);
-		} else {
-			em.persist(cliente);
+	public void save(Doctor doctor) {
+	//	if (paciente.getId() != null && paciente.getId() > 0) {
+			em.merge(doctor);
+	//	} else {
+			em.persist(doctor);
 		}
-	}
+	//}
 
 	@Override
 	@Transactional
-	public void delete(Long id) {
-		em.remove(findOne(id));
+	public void delete(String dni) {
+		em.remove(findOne(dni));
 	}
 
 }

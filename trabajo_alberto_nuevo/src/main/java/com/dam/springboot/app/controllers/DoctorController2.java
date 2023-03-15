@@ -14,65 +14,67 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.dam.springboot.app.models.dao.IClienteDao;
-import com.dam.springboot.app.models.entity.Cliente;
+import com.dam.springboot.app.models.dao.IDoctorDao;
+import com.dam.springboot.app.models.dao.IPacienteDao;
+import com.dam.springboot.app.models.entity.Doctor;
+import com.dam.springboot.app.models.entity.Paciente;
 
 @Controller
 @SessionAttributes("cliente")
-public class ClienteController {
+public class DoctorController2 {
 
 	@Autowired
-	private IClienteDao clienteDao;
+	private IDoctorDao doctorDao;
 
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public String listar(Model model) {
-		model.addAttribute("titulo", "Listado de clientes");
-		model.addAttribute("clientes", clienteDao.findAll());
+		model.addAttribute("titulo", "Listado de pacientes");
+		model.addAttribute("paciente", doctorDao.findAll());
 		return "listar";
 	}
 	
 	@RequestMapping(value = "/form")
 	public String crear(Map<String, Object> model) {
 
-		Cliente cliente = new Cliente();
-		model.put("cliente", cliente);
-		model.put("titulo", "Formulario de Cliente");
+		Doctor doctor = new Doctor();
+		model.put("paciente", doctor);
+		model.put("titulo", "Formulario de Paciente");
 		return "form";
 	}
 	
-	@RequestMapping(value="/form/{id}")
-	public String editar(@PathVariable(value="id") Long id, Map<String, Object> model) {
+	@RequestMapping(value="/form/{dni}")
+	public String editar(@PathVariable(value="dni") String dni, Map<String, Object> model) {
 		
-		Cliente cliente = null;
+		Doctor doctor = null;
 		
-		if(id > 0) {
-			cliente = clienteDao.findOne(id);
-		} else {
+		// if(dni > 0) {
+		//	doctor = doctorDao.findOne(dni);
+		// } else {
 			return "redirect:/listar";
-		}
-		model.put("cliente", cliente);
-		model.put("titulo", "Editar Cliente");
-		return "form";
+		//}
+	//	model.put("doctor", doctor);
+	//	model.put("titulo", "Editar Doctor");
+	//	return "form";
 	}
 	
 	@RequestMapping(value = "/form", method = RequestMethod.POST)
-	public String guardar(@Valid Cliente cliente, BindingResult result, Model model, SessionStatus status) {
+	public String guardar(@Valid Doctor doctor, BindingResult result, Model model, SessionStatus status) {
 		if(result.hasErrors()) {
-			model.addAttribute("titulo", "Formulario de Cliente");
+			model.addAttribute("titulo", "Formulario de doctor");
 			return "form";
 		}
 		
-		clienteDao.save(cliente);
+		doctorDao.save(doctor);
 		status.setComplete();
 		return "redirect:listar";
 	}
 	
-	@RequestMapping(value="/eliminar/{id}")
-	public String eliminar(@PathVariable(value="id") Long id) {
+	@RequestMapping(value="/eliminar/{dni}")
+	public String eliminar(@PathVariable(value="dni") String dni) {
 		
-		if(id > 0) {
-			clienteDao.delete(id);
-		}
+		//if(id > 0) {
+		doctorDao.delete(dni);
+		//}
 		return "redirect:/listar";
 	}
 }

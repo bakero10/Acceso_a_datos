@@ -14,33 +14,32 @@
 		<h1
 			class="text-secondary border border-success border-top-0 border-left-0 border-right-0"
 			th:text="${titulo}"></h1>
-		<p><a th:href="@{/form}" class="btn btn-success btn-xs">Crear cliente</a></p>
+		<p><a th:href="@{/form}" class="btn btn-success btn-xs">Crear paciente</a></p>
 		<table class="table table-striped">
 			<thead class="bg-dark">
 				<tr>
-					<th>id</th>
+					<th>dni</th>
 					<th>fecha_alta</th>
 					<th>nombre</th>
 					<th>apellidos</th>
 					<th>direccion</th>
 					<th>telefono</th>
 					<th>email</th>
-					<th>dni</th>
+					
 					
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="cliente: ${clientes}">
-					<td th:text="${cliente.id}"></td>
-					<td th:text="${cliente.fecha_alta}"></td>
-					<td th:text="${cliente.nombre}"></td>
-					<td th:text="${cliente.apellidos}"></td>
-					<td th:text="${cliente.direccion}"></td>
-					<td th:text="${cliente.telefono}"></td>
-					<td th:text="${cliente.email}"></td>
-					<td th:text="${cliente.dni}"></td>
-					<td><a class="btn btn-primary btn-xs" th:href="@{/form/} + ${cliente.id}" th:text="'editar'"></a></td>
-					<td><a class="btn btn-danger btn-xs" th:href="@{/eliminar/} + ${cliente.id}" th:text="'eliminar'" onclick="confirm('Estás seguro que quieres eliminar?');"></a></td>
+				<tr th:each="paciente: ${paciente}">
+					<td th:text="${paciente.dni}"></td>
+					<td th:text="${paciente.fecha_alta}"></td>
+					<td th:text="${paciente.nombre}"></td>
+					<td th:text="${paciente.apellidos}"></td>
+					<td th:text="${paciente.direccion}"></td>
+					<td th:text="${paciente.telefono}"></td>
+					<td th:text="${paciente.email}"></td>
+					<td><a class="btn btn-primary btn-xs" th:href="@{/form/} + ${paciente.id}" th:text="'editar'"></a></td>
+					<td><a class="btn btn-danger btn-xs" th:href="@{/eliminar/} + ${paciente.id}" th:text="'eliminar'" onclick="confirm('Estás seguro que quieres eliminar?');"></a></td>
 				</tr>
 			</tbody>
 
